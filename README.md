@@ -3,6 +3,8 @@
 This plugin provides a direct integration of voice channels into Mattermost.
 This is made possible by [lyno.io](https://lyno.io) which is using Jitsi as the base.
 
+![screenshot](screenshot.png)
+
 ## Future features
 - Popup to create new channel (Interactive Dialog)
 - Channel list with local user data
