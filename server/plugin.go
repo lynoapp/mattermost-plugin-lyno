@@ -41,7 +41,7 @@ func (p *Plugin) ServeHTTP(c *plugin.Context, w http.ResponseWriter, r *http.Req
 		siteURL = &SERVICE_SETTINGS_DEFAULT_SITE_URL // TODO: use constant from package
 	}
 
-	client := graphql.NewClient("http://192.168.0.27:5000/graphql", nil) // TODO: use env var
+	client := graphql.NewClient("https://mattermost-plugin.lyno.io/graphql", nil) // TODO: use env var
 
 	type (
 		AuthType      string
