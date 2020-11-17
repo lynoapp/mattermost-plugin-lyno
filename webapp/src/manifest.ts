@@ -1,5 +1,5 @@
 import manifest from '../../plugin.json';
 
 export default manifest;
-export const id = manifest.id;
-export const version = manifest.version;
+export const { id } = manifest;
+export const { version } = manifest;

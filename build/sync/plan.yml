@@ -33,7 +33,7 @@ actions:
       - webapp/babel.config.js
       - webapp/package.json
       - webapp/tsconfig.json
-      - webapp/webpack.config.js
+      - webapp/webpack.config.ts
       - webapp/src/manifest.test.tsx
       - webapp/tests/setup.tsx
     actions:

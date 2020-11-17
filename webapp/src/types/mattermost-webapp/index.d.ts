@@ -1,5 +1,8 @@
-export interface PluginRegistry {
-    registerPostTypeComponent(typeName: string, component: React.ElementType)
+import { Reducer } from 'redux';
 
-    // Add more if needed from https://developers.mattermost.com/extend/plugins/webapp/reference
+export interface PluginRegistry {
+  registerLeftSidebarHeaderComponent(component: React.ElementType)
+  registerReducer(reducer: Reducer<any, any>): void;
+
+  // Add more if needed from https://developers.mattermost.com/extend/plugins/webapp/reference
 }
