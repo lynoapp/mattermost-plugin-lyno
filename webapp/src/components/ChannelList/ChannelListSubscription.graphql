@@ -1,0 +1,19 @@
+subscription ChannelListSubscription (
+  $spaceSlug: TrimmedString!
+) {
+  channel (spaceSlug: $spaceSlug) {
+    mutation
+    node {
+      id
+      name
+      slug
+      unreadCount
+      isMember
+      secured
+    }
+    previousValues {
+      id
+      slug
+    }
+  }
+}

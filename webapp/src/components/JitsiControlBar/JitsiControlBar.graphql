@@ -1,0 +1,25 @@
+query JitsiControlBarQuery (
+  $userId: ID!
+  $channelSlug: TrimmedString!
+  $spaceSlug: TrimmedString!
+) {
+  channel(
+    userId: $userId
+    channelSlug: $channelSlug
+    spaceSlug: $spaceSlug
+  ) {
+    id
+    name
+    slug
+    token
+    space {
+      id
+      name
+      image
+      activeSlug {
+        id
+        slug
+      }
+    }
+  }
+}

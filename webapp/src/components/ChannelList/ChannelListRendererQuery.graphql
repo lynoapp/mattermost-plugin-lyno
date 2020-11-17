@@ -1,0 +1,20 @@
+query ChannelListRendererQuery (
+  $userId: ID!
+  $spaceSlug: TrimmedString!
+) {
+  channels (spaceSlug: $spaceSlug) {
+    id
+    name
+    slug
+    unreadCount
+    isMember
+    secured
+  }
+  space (
+    userId: $userId
+    spaceSlug: $spaceSlug
+  ) {
+    id
+    featureLevel
+  }
+}

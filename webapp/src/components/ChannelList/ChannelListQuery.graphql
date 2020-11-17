@@ -1,0 +1,12 @@
+query ChannelListQuery ($userId: ID!) {
+  user(userId: $userId) {
+    id
+    spaces {
+      id
+      externalId
+      activeSlug {
+        slug
+      }
+    }
+  }
+}
