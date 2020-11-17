@@ -5,12 +5,14 @@ import { GlobalState } from 'mattermost-redux/types/store';
 import { decode } from 'jsonwebtoken';
 
 import { UserToken } from '@lyno/types';
+import { ImageContext } from '@lyno/components';
 import { GraphQLProvider, setActiveUser } from '@lyno/client-helpers';
 
 import manifest from '../manifest';
 
 import { ChannelList } from './ChannelList';
 import { JitsiControlBar } from './JitsiControlBar';
+import './LynoPlugin.scss';
 
 const getPluginServerRoute = (state: GlobalState) => {
   const config = getConfig(state);
@@ -59,14 +61,16 @@ export const LynoPlugin: React.FC = () => {
   if (isExpired || auth.teamId !== teamId) return null;
 
   return (
-    <div>
-      <GraphQLProvider domain={process.env.LYNO_DOMAIN} authToken={auth.token}>
-        <div>
-          <h3>Lyno Voice Rooms</h3>
-          <ChannelList activeUser={tokenData.users[0]} teamId={teamId} />
-          <JitsiControlBar />
-        </div>
-      </GraphQLProvider>
+    <div className="lyno-plugin">
+      <ImageContext.Provider value={{ basePath: pluginServerRoute }}>
+        <GraphQLProvider domain={process.env.LYNO_DOMAIN} authToken={auth.token}>
+          <div>
+            <div className="lyno-plugin__headline">Lyno Voice Rooms</div>
+            <ChannelList activeUser={tokenData.users[0]} teamId={teamId} />
+            <JitsiControlBar />
+          </div>
+        </GraphQLProvider>
+      </ImageContext.Provider>
     </div>
   );
 };

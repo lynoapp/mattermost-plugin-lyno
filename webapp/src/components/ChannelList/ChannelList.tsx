@@ -16,7 +16,9 @@ import {
   ChannelListSubscriptionSubscription,
   MutationType,
   useChannelListRendererQueryQuery,
-} from 'generated/types';
+} from '../../generated/types';
+
+import './ChannelList.scss';
 
 interface ChannelListRendererProps {
   activeUser: string;
@@ -89,8 +91,8 @@ export const ChannelListRenderer: React.FC<ChannelListRendererProps> = ({
     reconnectActiveVoiceUserState,
   ] = useActiveVoiceUsers({ userId: activeUser, spaceSlug });
 
-  if (error) return <>Error</>;
-  if (loading && !data) return <>Loading...</>;
+  if (error) return null;
+  if (loading && !data) return null;
 
   const handleSetActiveVoiceChannel = (channelSlug: string) => {
     dispatch(setActiveVoiceChannel({
@@ -101,7 +103,7 @@ export const ChannelListRenderer: React.FC<ChannelListRendererProps> = ({
   };
 
   return (
-    <ul>
+    <ul className="lyno-channel-list">
       {data?.channels.map(({
         id,
         name,
@@ -116,8 +118,8 @@ export const ChannelListRenderer: React.FC<ChannelListRendererProps> = ({
           >
             {
               secured && !isMember
-                ? <FiLock size={16} />
-                : <FiVolume2 size={18} />
+                ? <FiLock size={14} />
+                : <FiVolume2 size={16} />
             }
             {name}
 

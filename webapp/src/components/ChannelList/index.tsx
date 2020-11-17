@@ -1,5 +1,5 @@
 import React from 'react';
-import { useChannelListQueryQuery } from 'generated/types';
+import { useChannelListQueryQuery } from '../../generated/types';
 import { ChannelListRenderer } from './ChannelList';
 
 export interface ChannelListProps {

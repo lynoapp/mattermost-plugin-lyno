@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import '@lyno/components/dist/index.css';
 
 import { authReducer } from '@lyno/client-helpers';
 import { lynoSDKReducer } from '@lyno/client-sdk/src/reducers';

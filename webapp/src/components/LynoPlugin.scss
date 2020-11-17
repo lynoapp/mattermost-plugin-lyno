@@ -1,0 +1,15 @@
+.lyno-plugin {
+  color: rgba(var(--sidebar-text-rgb), 0.6);
+  margin-bottom: 8px;
+
+  &__headline {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 7px 16px;
+  }
+}

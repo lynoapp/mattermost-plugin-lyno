@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { getLynoStore, LynoActiveVoiceChannelRootState, LynoAuthRootState } from '@lyno/client-helpers';
 
-import { useJitsiControlBarQueryQuery } from 'generated/types';
+import { useJitsiControlBarQueryQuery } from '../../generated/types';
 
 import { JitsiControlBarRenderer } from './JitsiControlBar';
 
@@ -27,8 +27,8 @@ export const JitsiControlBar: React.FC = () => {
   });
 
   if (!channelSlug) { return null; }
-  if (error) return <>Error</>;
-  if (loading) return <>Loading...</>;
+  if (error) return null;
+  if (loading) return null;
 
   return <JitsiControlBarRenderer channel={data.channel} />;
 };

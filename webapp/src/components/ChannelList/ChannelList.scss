@@ -1,0 +1,19 @@
+.lyno-channel-list {
+  color: rgba(var(--sidebar-text-rgb), 0.6);
+
+  button {
+    padding: 7px 17px;
+    width: 100%;
+    color: rgba(var(--sidebar-text-rgb), 0.6);
+    text-align: left;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  svg {
+    stroke: –sidebar-text;
+    margin-right: 8px;
+  }
+}

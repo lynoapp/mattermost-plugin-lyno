@@ -5,8 +5,10 @@ import { FiMic, FiMicOff, FiPhoneOff } from 'react-icons/fi';
 import { useLyno, JitsiMedia } from '@lyno/client-sdk';
 import { getLynoStore, resetActiveVoiceChannel } from '@lyno/client-helpers';
 
-import { JitsiControlBarQueryQueryResult } from 'generated/types';
 import { LynoSDKRootState } from '@lyno/client-sdk/src/reducers';
+import { JitsiControlBarQueryQueryResult } from '../../generated/types';
+
+import './JitsiControlBar.scss';
 
 interface JitsiControlBarProps {
   channel: JitsiControlBarQueryQueryResult['data']['channel'];
@@ -35,20 +37,24 @@ export const JitsiControlBarRenderer: React.FC<JitsiControlBarProps> = ({ channe
   const handleHangup = () => dispatch(resetActiveVoiceChannel());
 
   return React.useMemo(() => (
-    <div>
+    <div className="lyno-jitsi-control-bar">
       {remoteAudioTracks.map((track) => (
         <JitsiMedia
           key={track.getId()}
           track={track}
         />
       ))}
+      <div className="lyno-jitsi-control-bar__info">
+        <div className="lyno-jitsi-control-bar__connection">Voice Conntected:</div>
+        <div className="lyno-jitsi-control-bar__channel-name">{channel.name}</div>
+      </div>
       <button type="button" onClick={toggleAudio}>
-        { audioMuted
-          ? <FiMicOff size={20} />
-          : <FiMic size={20} />}
+        {audioMuted
+          ? <FiMicOff size={16} />
+          : <FiMic size={16} />}
       </button>
       <button type="button" onClick={handleHangup}>
-        <FiPhoneOff size={20} />
+        <FiPhoneOff size={16} />
       </button>
     </div>
   ), [audioMuted, cameraMuted, screenMuted, channel, remoteAudioTracks]);
