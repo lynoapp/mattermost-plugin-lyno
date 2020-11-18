@@ -1,5 +1,5 @@
 GO ?= $(shell command -v go 2> /dev/null)
-NPM ?= $(shell command -v npm 2> /dev/null)
+NPM ?= $(shell command -v yarn 2> /dev/null)
 CURL ?= $(shell command -v curl 2> /dev/null)
 MM_DEBUG ?=
 MANIFEST_FILE ?= plugin.json
@@ -30,7 +30,7 @@ endif
 
 ## Checks the code style, tests, builds and bundles the plugin.
 .PHONY: all
-all: check-style test dist
+all: dist
 
 ## Propagates plugin manifest information into the server/ and webapp/ folders.
 .PHONY: apply
@@ -205,11 +205,11 @@ endif
 .PHONY: i18n-extract
 i18n-extract:
 ifneq ($(HAS_WEBAPP),)
-ifeq ($(HAS_MM_UTILITIES),)
-	@echo "You must clone github.com/mattermost/mattermost-utilities repo in .. to use this command"
-else
-	cd $(MM_UTILITIES_DIR) && npm install && npm run babel && node mmjstool/build/index.js i18n extract-webapp --webapp-dir $(PWD)/webapp
-endif
+	ifeq ($(HAS_MM_UTILITIES),)
+		@echo "You must clone github.com/mattermost/mattermost-utilities repo in .. to use this command"
+	else
+		cd $(MM_UTILITIES_DIR) && $(NPM) install && $(NPM) run babel && node mmjstool/build/index.js i18n extract-webapp --webapp-dir $(PWD)/webapp
+	endif
 endif
 
 ## Disable the plugin.

@@ -2,13 +2,10 @@
   "name": "@lyno/mattermost-plugin",
   "version": "1.0.0",
   "scripts": {
-    "build": "graphql-codegen && webpack --mode=production",
-    "build:watch": "graphql-codegen && webpack --mode=production --watch",
+    "build": "NODE_ENV=production graphql-codegen && webpack --mode=production",
+    "build:watch": "NODE_ENV=production graphql-codegen && webpack --mode=production --watch",
     "debug": "graphql-codegen && webpack --mode=none",
-    "debug:watch": "graphql-codegen && webpack --mode=development --watch",
-    "lint": "eslint --ignore-pattern node_modules --ignore-pattern dist --ext .js --ext .jsx --ext tsx --ext ts . --quiet --cache",
-    "fix": "eslint --ignore-pattern node_modules --ignore-pattern dist --ext .js --ext .jsx --ext tsx --ext ts . --quiet --fix --cache",
-    "check-types": "tsc"
+    "debug:watch": "graphql-codegen && webpack --mode=development --watch"
   },
   "devDependencies": {
     "@babel/core": "7.12.3",
