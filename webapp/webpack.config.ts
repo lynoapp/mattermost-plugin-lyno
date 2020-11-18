@@ -1,8 +1,7 @@
 import { exec } from 'child_process';
-
 import path from 'path';
-
 import Dotenv from 'dotenv-webpack';
+import increaseSpecificity from 'postcss-increase-specificity';
 
 import { id as PLUGIN_ID } from '../plugin.json';
 
@@ -83,6 +82,17 @@ module.exports = {
           'style-loader',
           {
             loader: 'css-loader',
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              postcssOptions: {
+                plugins: [
+                  increaseSpecificity({ stackableRoot: '.lyno', repeat: 1 }),
+                ],
+              },
+            },
           },
           {
             loader: 'sass-loader',

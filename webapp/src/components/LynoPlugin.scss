@@ -1,3 +1,7 @@
+@import '~@lyno/client/src/styles/variables';
+@import '~@lyno/client/src/styles/reset';
+@import '~@lyno/components/dist/index.css';
+
 .lyno-plugin {
   color: rgba(var(--sidebar-text-rgb), 0.6);
   margin-bottom: 8px;

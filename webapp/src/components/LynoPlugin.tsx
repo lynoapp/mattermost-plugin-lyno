@@ -61,16 +61,18 @@ export const LynoPlugin: React.FC = () => {
   if (isExpired || auth.teamId !== teamId) return null;
 
   return (
-    <div className="lyno-plugin">
-      <ImageContext.Provider value={{ basePath: pluginServerRoute }}>
-        <GraphQLProvider domain={process.env.LYNO_DOMAIN} authToken={auth.token}>
-          <div>
-            <div className="lyno-plugin__headline">Lyno Voice Rooms</div>
-            <ChannelList activeUser={tokenData.users[0]} teamId={teamId} />
-            <JitsiControlBar />
-          </div>
-        </GraphQLProvider>
-      </ImageContext.Provider>
+    <div className="lyno">
+      <div className="lyno-plugin">
+        <ImageContext.Provider value={{ basePath: pluginServerRoute }}>
+          <GraphQLProvider domain={process.env.LYNO_DOMAIN} authToken={auth.token}>
+            <div>
+              <div className="lyno-plugin__headline">Lyno Voice Rooms</div>
+              <ChannelList activeUser={tokenData.users[0]} teamId={teamId} />
+              <JitsiControlBar />
+            </div>
+          </GraphQLProvider>
+        </ImageContext.Provider>
+      </div>
     </div>
   );
 };
