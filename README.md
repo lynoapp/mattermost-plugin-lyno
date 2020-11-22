@@ -20,7 +20,7 @@ This is made possible by [lyno.io](https://lyno.io) which is using Jitsi as the 
 - Plugin Settings
 - Channel Header Button to create voice channels based on existing text channel
 
-### How to use
+## How to use
 
 This plugin currently has to be installed via a plugin upload. You can download the latest release [here](https://github.com/lynoapp/mattermost-plugin-lyno/releases).
 
