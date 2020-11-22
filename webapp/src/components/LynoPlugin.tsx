@@ -42,7 +42,10 @@ export const LynoPlugin: React.FC = () => {
     const getToken = async () => {
       const { token, error } = await (await fetch(`${pluginServerRoute}?teamId=${teamId}`)).json();
 
-      if (!token || error) return;
+      if (!token || error) {
+        console.error('io.lyno.plugin', 'Requesting auth token from lyno servers failed.', error)
+        return;
+      };
       setAuth({ teamId, token });
 
       const tokenData = decode(token) as UserToken;
