@@ -40,7 +40,9 @@ export const LynoPlugin: React.FC = () => {
 
   useEffect(() => {
     const getToken = async () => {
-      const { token } = await (await fetch(`${pluginServerRoute}?teamId=${teamId}`)).json();
+      const { token, error } = await (await fetch(`${pluginServerRoute}?teamId=${teamId}`)).json();
+
+      if (!token || error) return;
       setAuth({ teamId, token });
 
       const tokenData = decode(token) as UserToken;
