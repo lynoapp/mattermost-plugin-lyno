@@ -34,7 +34,7 @@ export const LynoPlugin: React.FC = () => {
   const pluginServerRoute = useSelector((state: GlobalState) => getPluginServerRoute(state));
   const [auth, setAuth] = useState<{
     teamId: string;
-    token: string,
+    token: string;
   }>();
   const dispatch = useDispatch();
 

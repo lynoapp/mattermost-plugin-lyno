@@ -43,7 +43,7 @@ export default class Plugin {
 
 declare global {
   interface Window {
-    registerPlugin(id: string, plugin: Plugin): void
+    registerPlugin(id: string, plugin: Plugin): void;
   }
 }
 
