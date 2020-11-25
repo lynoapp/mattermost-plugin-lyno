@@ -43,6 +43,11 @@ export const ChannelListRenderer: React.FC<ChannelListRendererProps> = ({ spaceS
     },
   });
 
+  const [
+    activeVoiceUserState,
+    reconnectActiveVoiceUserState,
+  ] = useActiveVoiceUsers({ userId: activeUser, spaceSlug });
+
   useEffect(() => {
     const subscribeToChannels = () => subscribeToMore<ChannelListSubscriptionSubscription>({
       document: ChannelListSubscriptionDocument,
@@ -83,11 +88,6 @@ export const ChannelListRenderer: React.FC<ChannelListRendererProps> = ({ spaceS
 
     return subscribeToChannels();
   }, []);
-
-  const [
-    activeVoiceUserState,
-    reconnectActiveVoiceUserState,
-  ] = useActiveVoiceUsers({ userId: activeUser, spaceSlug });
 
   if (error) return null;
   if (loading && !data) return null;

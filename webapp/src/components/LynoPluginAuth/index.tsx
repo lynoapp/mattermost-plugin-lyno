@@ -1,1 +1,1 @@
-export * from './LynoPluginAuth'
+export * from './LynoPluginAuth';

@@ -4,7 +4,12 @@ import { getConfig } from 'mattermost-redux/selectors/entities/general';
 import { GlobalState } from 'mattermost-redux/types/store';
 import { ClientConfig } from 'mattermost-redux/types/config';
 
-import { getLynoStore, LynoAuthRootState, setActiveUser, setAuthToken } from '@lyno/client-helpers';
+import {
+  getLynoStore,
+  LynoAuthRootState,
+  setActiveUser,
+  setAuthToken,
+} from '@lyno/client-helpers';
 
 import manifest from '../../manifest';
 import { AuthType, useLynoPluginAuthMutationMutation } from '../../generated/types';
@@ -46,6 +51,7 @@ export const LynoPluginAuth: React.FC = ({ children }) => {
         },
       });
       if (!data || result.error) {
+        // eslint-disable-next-line no-console
         console.error('io.lyno.plugin', 'Requesting auth token from lyno servers failed.', result.error);
         return;
       }
