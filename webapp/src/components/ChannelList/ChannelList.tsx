@@ -9,6 +9,7 @@ import {
   resetActiveVoiceChannel,
   getLynoStore,
   setActiveVoiceChannel,
+  LynoAuthRootState,
 } from '@lyno/client-helpers';
 
 import {
@@ -21,15 +22,12 @@ import {
 import './ChannelList.scss';
 
 interface ChannelListRendererProps {
-  activeUser: string;
   spaceSlug: string;
 }
 
-export const ChannelListRenderer: React.FC<ChannelListRendererProps> = ({
-  activeUser,
-  spaceSlug,
-}: ChannelListRendererProps) => {
+export const ChannelListRenderer: React.FC<ChannelListRendererProps> = ({ spaceSlug }: ChannelListRendererProps) => {
   const dispatch = useDispatch();
+  const activeUser = useSelector((state: LynoAuthRootState) => getLynoStore<LynoAuthRootState>(state).auth.activeUser);
   const { channelSlug } = useSelector(
     (state: LynoActiveVoiceChannelRootState) => getLynoStore<LynoActiveVoiceChannelRootState>(state).activeVoiceChannel,
   );

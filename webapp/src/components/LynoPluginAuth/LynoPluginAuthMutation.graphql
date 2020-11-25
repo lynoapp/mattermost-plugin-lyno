@@ -1,0 +1,16 @@
+mutation LynoPluginAuthMutation (
+  $code: TrimmedString!
+  $type: AuthType!
+  $siteUrl: TrimmedString!
+  $teamId: TrimmedString!
+) {
+  authenticate(
+    code: $code
+    type: $type
+    siteUrl: $siteUrl
+    teamId: $teamId
+  ) {
+    id
+    token
+  }
+}
