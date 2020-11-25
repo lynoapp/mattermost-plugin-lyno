@@ -8,7 +8,7 @@
     "debug:watch": "graphql-codegen && webpack --mode=development --watch"
   },
   "devDependencies": {
-    "@babel/core": "7.12.7",
+    "@babel/core": "7.12.9",
     "@babel/plugin-proposal-class-properties": "7.12.1",
     "@babel/plugin-proposal-object-rest-spread": "7.12.1",
     "@babel/plugin-proposal-optional-chaining": "7.12.7",
@@ -22,7 +22,7 @@
     "@graphql-codegen/typescript": "1.17.11",
     "@graphql-codegen/typescript-operations": "1.17.10",
     "@graphql-codegen/typescript-react-apollo": "2.1.1",
-    "@lyno/lib-jitsi-meet": "1.5076.0",
+    "@lyno/lib-jitsi-meet": "1.5142.0",
     "@types/node": "14.14.9",
     "@types/react": "17.0.0",
     "@types/react-dom": "17.0.0",
@@ -35,7 +35,7 @@
     "dotenv-webpack": "5.0.1",
     "file-loader": "6.2.0",
     "mattermost-webapp": "github:mattermost/mattermost-webapp#23f5f93d9f12a7e2b5623e5cee6814366abd9a0f",
-    "postcss": "8.1.9",
+    "postcss": "8.1.10",
     "postcss-increase-specificity": "0.6.0",
     "postcss-loader": "4.1.0",
     "sass": "1.29.0",
@@ -53,7 +53,7 @@
     "@lyno/types": "1.0.0",
     "jsonwebtoken": "8.5.1",
     "mattermost-redux": "5.29.0",
-    "react": "16.13.1",
+    "react": "17.0.1",
     "react-icons": "3.11.0",
     "react-redux": "7.2.2",
     "redux": "4.0.5"
