@@ -82,6 +82,9 @@ module.exports = {
           'style-loader',
           {
             loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+            },
           },
           {
             loader: 'postcss-loader',
@@ -113,7 +116,6 @@ module.exports = {
     'prop-types': 'PropTypes',
     'react-bootstrap': 'ReactBootstrap',
     'react-router-dom': 'ReactRouterDom',
-    // 'graphql': 'GraphQL',
   },
   output: {
     devtoolNamespace: PLUGIN_ID,
