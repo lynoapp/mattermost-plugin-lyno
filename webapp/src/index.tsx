@@ -24,10 +24,10 @@ export default class Plugin {
     /**
      * To signup the real authentity is needed
      * - the best would be an auth token from the server (maybe possible with GetSession in server plugin)
-     * - server plugin sends token and domain to lyno server
+     * - server plugin sends the session token to the plugin frontend
      * - lyno server requests the user data from the mattermost server
      * - lyno server responds with a lyno auth token
-     * - mattermost plugin sends lyno auth token to webapp plugin frontend
+     * - mattermost plugin is now authenticated
      */
 
     // Main problems:
