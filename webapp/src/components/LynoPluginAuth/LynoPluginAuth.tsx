@@ -67,7 +67,7 @@ export const LynoPluginAuth: React.FC = ({ children }) => {
 
   // TODO: refresh token if expired and show loader
 
-  if (!auth) return null;
+  if (!auth || !tokenData) return null;
   const currentTime = Date.now() / 1000;
   const isExpired = currentTime >= tokenData.exp;
   if (isExpired || auth.teamId !== teamId) return null;
