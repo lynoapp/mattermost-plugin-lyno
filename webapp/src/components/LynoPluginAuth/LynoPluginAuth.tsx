@@ -56,7 +56,6 @@ export const LynoPluginAuth: React.FC = ({ children }) => {
         return;
       }
       setAuth({ teamId, token: data.authenticate.token });
-      dispatch(setActiveUser(data.authenticate.id));
       dispatch(setAuthToken(data.authenticate.token));
     };
 
