@@ -83,6 +83,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              sourceMap: true,
               importLoaders: 2,
             },
           },
@@ -100,9 +101,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              sassOptions: {
-                includePaths: ['node_modules/compass-mixins/lib', 'sass'],
-              },
+              sourceMap: true,
             },
           },
         ],
