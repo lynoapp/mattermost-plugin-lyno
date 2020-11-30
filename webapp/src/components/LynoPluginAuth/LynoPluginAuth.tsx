@@ -7,7 +7,6 @@ import { ClientConfig } from 'mattermost-redux/types/config';
 import {
   getLynoStore,
   LynoAuthRootState,
-  setActiveUser,
   setAuthToken,
 } from '@lyno/client-helpers';
 
