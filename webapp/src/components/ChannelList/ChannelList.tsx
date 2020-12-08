@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FiLock, FiVolume2 } from 'react-icons/fi';
+import { bemJoin } from 'bem-join';
 
 import { VoiceUserList } from '@lyno/components';
 import { useActiveVoiceUsers } from '@lyno/client-hooks';
@@ -20,6 +21,8 @@ import {
 } from '../../generated/types';
 
 import './ChannelList.scss';
+
+const b = bemJoin('lyno-channel-list');
 
 interface ChannelListRendererProps {
   spaceSlug: string;
@@ -101,7 +104,7 @@ export const ChannelListRenderer: React.FC<ChannelListRendererProps> = ({ spaceS
   };
 
   return (
-    <ul className="lyno-channel-list">
+    <ul className={b()}>
       {data?.channels.map(({
         id,
         name,
@@ -122,11 +125,13 @@ export const ChannelListRenderer: React.FC<ChannelListRendererProps> = ({ spaceS
             {name}
 
           </button>
-          <VoiceUserList
-            users={activeVoiceUserState[id]}
-            spaceSlug={spaceSlug}
-            channelSlug={slug}
-          />
+          <div className={b('users')}>
+            <VoiceUserList
+              users={activeVoiceUserState[id]}
+              spaceSlug={spaceSlug}
+              channelSlug={slug}
+            />
+          </div>
         </li>
       ))}
     </ul>
