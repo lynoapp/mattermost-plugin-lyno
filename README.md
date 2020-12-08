@@ -31,6 +31,10 @@ Requirements:
 - Mattermost server has to be reachable from the internet
 - `EnableDeveloper` has to be set to `false`
 
+### Logging
+
+To change the log level you have to set an item in the localStorage called `log` to a log level of your choice. For more information read [the docs of ulog](https://github.com/Download/ulog#via-localstorage).
+
 ## Contributing
 
 Contributions are very welcome. Please feels free to submit a PR/issue.

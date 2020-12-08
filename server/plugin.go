@@ -23,12 +23,15 @@ type Plugin struct {
 // ServeHTTP demonstrates a plugin that handles HTTP requests by greeting the world.
 func (p *Plugin) ServeHTTP(c *plugin.Context, w http.ResponseWriter, r *http.Request) {
 	session, _ := p.API.GetSession(c.SessionId)
+	siteURL := p.API.GetConfig().ServiceSettings.SiteURL
 
 	w.Header().Set("Content-Type", "application/json")
 
 	json.NewEncoder(w).Encode(map[string]interface{}{
 		"sessionToken": session.Token,
 	})
+
+	w.Header().Set("Access-Control-Allow-Origin", *siteURL)
 }
 
 // See https://developers.mattermost.com/extend/plugins/server/reference/
