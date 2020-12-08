@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { bemJoin } from 'bem-join';
 
 import { ImageContext } from '@lyno/components';
 import { GraphQLProvider } from '@lyno/client-helpers';
@@ -8,20 +9,45 @@ import { JitsiControlBar } from './JitsiControlBar';
 import { LynoPluginAuth } from './LynoPluginAuth';
 import './LynoPlugin.scss';
 
-export const LynoPlugin: React.FC = () => (
-  <div className="lyno">
-    <div className="lyno-plugin">
-      <ImageContext.Provider value={{ basePath: '/' }}>
-        <GraphQLProvider domain={process.env.LYNO_DOMAIN}>
-          <LynoPluginAuth>
+const b = bemJoin('lyno-plugin');
+
+export const LynoPlugin: React.FC = () => {
+  const [lynoPrivacyAccepted, setLynoPrivacyAccepted] = useState(
+    !!window.localStorage.getItem('lynoPrivacyAccepted'),
+  );
+
+  const acceptPrivacyPolicy = () => {
+    setLynoPrivacyAccepted(true);
+    window.localStorage.setItem('lynoPrivacyAccepted', 'true');
+  }
+
+  return (
+    <div className="lyno">
+      <div className={b()}>
+        <ImageContext.Provider value={{ basePath: '/' }}>
+          <GraphQLProvider domain={process.env.LYNO_DOMAIN}>
             <div>
-              <div className="lyno-plugin__headline">Lyno Voice Rooms</div>
-              <ChannelList />
-              <JitsiControlBar />
+              <div className={b('headline')}>Lyno Voice Rooms</div>
+              {lynoPrivacyAccepted ? (
+                <LynoPluginAuth>
+                  <ChannelList />
+                  <JitsiControlBar />
+                </LynoPluginAuth>
+              ) : (
+                <>
+                  <div className={b('privacy-hint')}>
+                    Please read and accept<br/>
+                    our <a href="https://lyno.io/privacy" target="_blank">privacy policy</a>.
+                  </div>
+                  <button className={b('privacy-button')} type="button" onClick={acceptPrivacyPolicy}>
+                    Accept privacy policy
+                  </button>
+                </>
+              )}
             </div>
-          </LynoPluginAuth>
-        </GraphQLProvider>
-      </ImageContext.Provider>
+          </GraphQLProvider>
+        </ImageContext.Provider>
+      </div>
     </div>
-  </div>
-);
+  );
+};

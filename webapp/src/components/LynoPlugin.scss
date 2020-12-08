@@ -16,4 +16,30 @@
     text-transform: uppercase;
     padding: 7px 16px;
   }
+
+  &__privacy-hint {
+    padding: 0 17px;
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 12px;
+
+    a {
+      text-decoration: underline;
+      color: inherit;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__privacy-button {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    line-height: 28px;
+    padding: 0 15px;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: block;
+  }
 }
