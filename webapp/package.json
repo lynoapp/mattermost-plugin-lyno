@@ -1,6 +1,6 @@
 {
   "name": "@lyno/mattermost-plugin",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "build": "NODE_ENV=production graphql-codegen && webpack --mode=production",
     "build:watch": "NODE_ENV=production graphql-codegen && webpack --mode=production --watch",
