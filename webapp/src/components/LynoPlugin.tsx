@@ -19,7 +19,7 @@ export const LynoPlugin: React.FC = () => {
   const acceptPrivacyPolicy = () => {
     setLynoPrivacyAccepted(true);
     window.localStorage.setItem('lynoPrivacyAccepted', 'true');
-  }
+  };
 
   return (
     <div className="lyno">
@@ -36,8 +36,8 @@ export const LynoPlugin: React.FC = () => {
               ) : (
                 <>
                   <div className={b('privacy-hint')}>
-                    Please read and accept<br/>
-                    our <a href="https://lyno.io/privacy" target="_blank">privacy policy</a>.
+                    Please read and accept<br />
+                    our <a href="https://lyno.io/privacy" target="_blank" rel="noreferrer">privacy policy</a>.
                   </div>
                   <button className={b('privacy-button')} type="button" onClick={acceptPrivacyPolicy}>
                     Accept privacy policy

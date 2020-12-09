@@ -50,6 +50,7 @@
     "@lyno/client-hooks": "1.0.0",
     "@lyno/client-sdk": "1.0.0",
     "@lyno/components": "1.0.0",
+    "bem-join": "2.0.2",
     "mattermost-redux": "5.29.1",
     "react": "17.0.1",
     "react-icons": "3.11.0",
