@@ -41,7 +41,7 @@ export const LynoPluginAuth: React.FC = ({ children }) => {
   useEffect(() => {
     const getToken = async () => {
       const { sessionToken } = await (await fetch(pluginServerRoute)).json();
-      const { data } = await mutate({
+      const { data, errors } = await mutate({
         variables: {
           type: AuthType.Mattermost,
           code: sessionToken,
@@ -49,9 +49,9 @@ export const LynoPluginAuth: React.FC = ({ children }) => {
           teamId,
         },
       });
-      if (!data || result.error) {
+      if (!data?.authenticate?.token || result.error || errors.length > 0) {
         // eslint-disable-next-line no-console
-        console.error('io.lyno.plugin', 'Requesting auth token from lyno servers failed.', result.error);
+        console.error('io.lyno.plugin', 'Requesting auth token from lyno servers failed.', result.error || errors);
         return;
       }
       setAuth({ teamId, token: data.authenticate.token });
