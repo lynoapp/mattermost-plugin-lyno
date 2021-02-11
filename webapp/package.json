@@ -46,10 +46,10 @@
     "webpack-cli": "3.3.12"
   },
   "dependencies": {
-    "@lyno/client-helpers": "1.0.0",
-    "@lyno/client-hooks": "1.0.0",
-    "@lyno/client-sdk": "1.0.0",
-    "@lyno/components": "1.0.0",
+    "@lyno/client-helpers": "2.5.2",
+    "@lyno/client-hooks": "2.5.2",
+    "@lyno/client-sdk": "2.5.2",
+    "@lyno/components": "2.5.2",
     "bem-join": "2.0.2",
     "mattermost-redux": "5.29.1",
     "react": "17.0.1",
