@@ -1,4 +1,4 @@
-schema: ../../server-graphql/src/generated/schema.graphql
+schema: https://lyno.io/graphql
 documents: ./src/**/*.graphql
 generates:
   ./src/generated/types.tsx:

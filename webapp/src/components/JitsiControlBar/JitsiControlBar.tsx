@@ -2,10 +2,9 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import JitsiRemoteTrack from '@lyno/lib-jitsi-meet/modules/RTC/JitsiRemoteTrack';
 import { FiMic, FiMicOff, FiPhoneOff } from 'react-icons/fi';
-import { useLyno, JitsiMedia } from '@lyno/client-sdk';
+import { useLyno, JitsiMedia, LynoSDKRootState } from '@lyno/client-sdk';
 import { getLynoStore, resetActiveVoiceChannel } from '@lyno/client-helpers';
 
-import { LynoSDKRootState } from '@lyno/client-sdk/src/reducers';
 import { JitsiControlBarQueryQueryResult } from '../../generated/types';
 
 import './JitsiControlBar.scss';

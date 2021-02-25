@@ -1,15 +1,20 @@
 {
-  "extends": "../../../tsconfig.json",
   "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ],
+    "sourceMap": true,
+    "esModuleInterop": true,
     "baseUrl": ".",
     "jsx": "react",
-    "declaration": false,
-    "declarationMap": false,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "noUnusedLocals": false,
   },
   "include": [
     "src"

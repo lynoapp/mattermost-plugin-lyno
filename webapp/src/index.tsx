@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 import { authReducer } from '@lyno/client-helpers';
-import { lynoSDKReducer } from '@lyno/client-sdk/src/reducers';
+import { lynoSDKReducer } from '@lyno/client-sdk';
 import { activeVoiceChannelReducer } from '@lyno/client-helpers/dist/reducers/activeVoiceChannel';
 
 import manifest from './manifest';
