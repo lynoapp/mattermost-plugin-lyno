@@ -18,7 +18,7 @@ const manifestStr = `
   "homepage_url": "https://github.com/lynoapp/mattermost-plugin-lyno/blob/master/README.md",
   "support_url": "https://github.com/lynoapp/mattermost-plugin-lyno/issues",
   "release_notes_url": "https://github.com/lynoapp/mattermost-plugin-lyno/releases/tag/1.1.0",
-  "icon_path": "assets/logo.svg",
+  "icon_path": "assets/icon.svg",
   "version": "1.1.0",
   "min_server_version": "5.12.0",
   "server": {
