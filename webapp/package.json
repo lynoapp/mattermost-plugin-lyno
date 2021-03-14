@@ -1,6 +1,6 @@
 {
   "name": "@lyno/mattermost-plugin",
-  "version": "2.5.3",
+  "version": "2.6.1",
   "scripts": {
     "build": "NODE_ENV=production graphql-codegen && webpack --mode=production",
     "build:watch": "NODE_ENV=production graphql-codegen && webpack --mode=production --watch",
@@ -47,13 +47,13 @@
     "webpack-cli": "3.3.12"
   },
   "dependencies": {
-    "@lyno/client-helpers": "2.5.3",
-    "@lyno/client-hooks": "2.5.3",
-    "@lyno/client-sdk": "2.5.3",
-    "@lyno/components": "2.5.3",
-    "@lyno/feature-level-utils": "2.5.3",
-    "@lyno/permission-utils": "2.5.3",
-    "@lyno/validation": "2.5.3",
+    "@lyno/client-helpers": "2.6.1",
+    "@lyno/client-hooks": "2.6.1",
+    "@lyno/client-sdk": "2.6.1",
+    "@lyno/components": "2.6.1",
+    "@lyno/feature-level-utils": "2.6.1",
+    "@lyno/permission-utils": "2.6.1",
+    "@lyno/validation": "2.6.1",
     "bem-join": "2.0.2",
     "mattermost-redux": "5.29.1",
     "react": "17.0.1",
