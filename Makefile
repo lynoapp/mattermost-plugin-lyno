@@ -4,7 +4,6 @@ CURL ?= $(shell command -v curl 2> /dev/null)
 MM_DEBUG ?=
 MANIFEST_FILE ?= plugin.json
 GOPATH ?= $(shell go env GOPATH)
-GO_TEST_FLAGS ?= -race
 GO_BUILD_FLAGS ?=
 MM_UTILITIES_DIR ?= ../mattermost-utilities
 DLV_DEBUG_PORT := 2346
@@ -28,7 +27,7 @@ ifneq ($(wildcard build/custom.mk),)
 	include build/custom.mk
 endif
 
-## Checks the code style, tests, builds and bundles the plugin.
+## Checks the code style, builds and bundles the plugin.
 .PHONY: all
 all: dist
 
@@ -180,27 +179,6 @@ detach: setup-attach
 		kill -9 $$DELVE_PID ; \
 	fi
 
-## Runs any lints and unit tests defined for the server and webapp, if they exist.
-.PHONY: test
-test: webapp/node_modules
-ifneq ($(HAS_SERVER),)
-	$(GO) test -v $(GO_TEST_FLAGS) ./server/...
-endif
-ifneq ($(HAS_WEBAPP),)
-	cd webapp && $(NPM) run test;
-endif
-ifneq ($(wildcard ./build/sync/plan/.),)
-	cd ./build/sync && $(GO) test -v $(GO_TEST_FLAGS) ./...
-endif
-
-## Creates a coverage report for the server code.
-.PHONY: coverage
-coverage: webapp/node_modules
-ifneq ($(HAS_SERVER),)
-	$(GO) test $(GO_TEST_FLAGS) -coverprofile=server/coverage.txt ./server/...
-	$(GO) tool cover -html=server/coverage.txt
-endif
-
 ## Extract strings for translation from the source code.
 .PHONY: i18n-extract
 i18n-extract:
@@ -242,7 +220,6 @@ kill: detach
 clean:
 	rm -fr dist/
 ifneq ($(HAS_SERVER),)
-	rm -fr server/coverage.txt
 	rm -fr server/dist
 endif
 ifneq ($(HAS_WEBAPP),)
