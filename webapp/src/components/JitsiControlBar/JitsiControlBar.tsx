@@ -44,7 +44,7 @@ export const JitsiControlBarRenderer: React.FC<JitsiControlBarProps> = ({ channe
         />
       ))}
       <div className="lyno-jitsi-control-bar__info">
-        <div className="lyno-jitsi-control-bar__connection">Voice Conntected:</div>
+        <div className="lyno-jitsi-control-bar__connection">Voice Connected:</div>
         <div className="lyno-jitsi-control-bar__channel-name">{channel.name}</div>
       </div>
       <button type="button" onClick={toggleAudio}>

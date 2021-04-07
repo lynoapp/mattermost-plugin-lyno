@@ -37,5 +37,5 @@ To change the log level you have to set an item in the localStorage called `log`
 
 ## Contributing
 
-Contributions are very welcome. Please feels free to submit a PR/issue.
-Unfortunetly it is currently not possible to compile our plugin because some internal libraries are not publicly available yet.
+Contributions are very welcome. Please feel free to submit a PR/issue.
+Unfortunately it is currently not possible to compile our plugin because some internal libraries are not publicly available yet.
