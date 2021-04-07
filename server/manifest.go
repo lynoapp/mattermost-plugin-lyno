@@ -20,7 +20,7 @@ const manifestStr = `
   "release_notes_url": "https://github.com/lynoapp/mattermost-plugin-lyno/releases/tag/1.1.0",
   "icon_path": "assets/icon.svg",
   "version": "1.1.0",
-  "min_server_version": "5.12.0",
+  "min_server_version": "5.26.0",
   "server": {
     "executables": {
       "linux-amd64": "server/dist/plugin-linux-amd64",
