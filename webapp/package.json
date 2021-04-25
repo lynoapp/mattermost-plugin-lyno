@@ -17,7 +17,7 @@
     "@babel/preset-env": "7.13.15",
     "@babel/preset-react": "7.13.13",
     "@babel/preset-typescript": "7.13.0",
-    "@babel/runtime": "7.13.16",
+    "@babel/runtime": "7.13.17",
     "@graphql-codegen/cli": "1.21.4",
     "@graphql-codegen/typescript": "1.22.0",
     "@graphql-codegen/typescript-operations": "1.17.16",
@@ -34,15 +34,15 @@
     "dotenv-webpack": "7.0.2",
     "file-loader": "6.2.0",
     "mattermost-webapp": "github:mattermost/mattermost-webapp#v5.31.0",
-    "postcss": "8.2.10",
+    "postcss": "8.2.12",
     "postcss-increase-specificity": "0.6.0",
     "postcss-loader": "5.2.0",
     "sass": "1.32.11",
     "sass-loader": "11.0.1",
     "style-loader": "2.0.0",
-    "ts-loader": "9.0.2",
+    "ts-loader": "9.1.1",
     "typescript": "4.2.4",
-    "webpack": "5.34.0",
+    "webpack": "5.35.1",
     "webpack-cli": "4.6.0"
   },
   "dependencies": {
@@ -57,8 +57,8 @@
     "mattermost-redux": "5.33.1",
     "react": "17.0.2",
     "react-icons": "4.2.0",
-    "react-redux": "7.2.3",
-    "redux": "4.0.5"
+    "react-redux": "7.2.4",
+    "redux": "4.1.0"
   },
   "resolutions": {
     "@graphql-tools/url-loader": "6.8.1"
