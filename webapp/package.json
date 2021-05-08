@@ -50,6 +50,7 @@
     "@lyno/client-hooks": "2.7.6",
     "@lyno/client-sdk": "2.7.6",
     "@lyno/components": "2.7.6",
+    "@lyno/constants": "2.7.6",
     "@lyno/feature-level-utils": "2.7.6",
     "@lyno/permission-utils": "2.7.6",
     "@lyno/validation": "2.7.6",

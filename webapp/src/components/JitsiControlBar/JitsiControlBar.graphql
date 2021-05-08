@@ -16,6 +16,7 @@ query JitsiControlBarQuery (
       id
       name
       image
+      featureLevel
       activeSlug {
         id
         slug
