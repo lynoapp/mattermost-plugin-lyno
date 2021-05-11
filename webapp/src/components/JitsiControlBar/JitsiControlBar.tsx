@@ -4,6 +4,7 @@ import JitsiRemoteTrack from '@lyno/lib-jitsi-meet/modules/RTC/JitsiRemoteTrack'
 import { FiMic, FiMicOff, FiPhoneOff } from 'react-icons/fi';
 import { useLyno, JitsiMedia, LynoSDKRootState } from '@lyno/client-sdk';
 import { getLynoStore, resetActiveVoiceChannel } from '@lyno/client-helpers';
+import { fpsOptions } from '@lyno/constants';
 
 import { JitsiControlBarQueryQueryResult } from '../../generated/types';
 
@@ -15,7 +16,11 @@ interface JitsiControlBarProps {
 
 export const JitsiControlBarRenderer: React.FC<JitsiControlBarProps> = ({ channel }: JitsiControlBarProps) => {
   const dispatch = useDispatch();
-  const { toggleAudio } = useLyno({ endpoint: process.env.JITSI_HOSTNAME, token: channel.token });
+  const { toggleAudio } = useLyno({
+    endpoint: process.env.JITSI_HOSTNAME,
+    token: channel.token,
+    options: fpsOptions[channel.space.featureLevel],
+  });
   const {
     audioMuted,
     cameraMuted,
