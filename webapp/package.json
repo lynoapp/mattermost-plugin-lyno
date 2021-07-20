@@ -22,7 +22,7 @@
     "@graphql-codegen/typescript": "1.22.0",
     "@graphql-codegen/typescript-operations": "1.17.16",
     "@graphql-codegen/typescript-react-apollo": "2.2.4",
-    "@lyno/lib-jitsi-meet": "1.5142.0",
+    "@lyno/lib-jitsi-meet": "2.5963.0",
     "@types/node": "15.0.1",
     "@types/react": "17.0.4",
     "@types/react-dom": "17.0.3",
